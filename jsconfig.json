@@ -1,0 +1,11 @@
+{
+    "typeAcquisition": {
+        "include": [
+            "three"
+        ]
+    },
+    "include": [
+        "js/*",
+        "libs/**/*"
+    ]
+}
