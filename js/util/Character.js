@@ -49,7 +49,7 @@ Rem = function () {
     this.initScale = new THREE.Vector3(10, 10, 10);
     this.initRot = new THREE.Vector3(1/7 *Math.PI, 0, 0);
     this.physicScale = new THREE.Vector3(1, 1, 1);
-    this.obj = '../assets/test/rem.obj';
+    this.obj = 'assets/test/rem.obj';
     this.mtl = 'rem.mtl';
     this.speed = 0.5
     this.damage = 2;
@@ -115,7 +115,7 @@ Knight = function () {
     this.initScale = new THREE.Vector3(10, 10, 10);
     this.initRot = new THREE.Vector3(1/7 *Math.PI, -1/10 *Math.PI, 0);
     this.physicScale = new THREE.Vector3(1.2, 1.2, 1.2);
-    this.obj = '../assets/test/knight.obj';
+    this.obj = 'assets/test/knight.obj';
     this.mtl = 'knight.mtl';
     this.speed = 1.1;
     this.damage = 2;
@@ -152,7 +152,7 @@ Fox = function () {
     this.initScale = new THREE.Vector3(5, 5, 5);
     this.initRot = new THREE.Vector3(1/7 *Math.PI, 1/10 *Math.PI, 0);
     this.physicScale = new THREE.Vector3(1.2, 1.2, 1.2);
-    this.obj = '../assets/test/fox.obj';
+    this.obj = 'assets/test/fox.obj';
     this.mtl = 'fox.mtl';
     this.speed = 1.1;
     this.damage = 2;
@@ -188,7 +188,7 @@ createHammer = function(chara) {
         console.log("hammer资源加载完成");
     };
     let fbx_loader = new THREE.FBXLoader(manager);
-    fbx_loader.load('../assets/test/hammer.FBX', function(object) {
+    fbx_loader.load('assets/test/hammer.FBX', function(object) {
         // object.scale.multiplyScalar(.1);    // 缩放模型大小
         chara.uniqueWeapon = wrapMeshWithBoxPhysic(object, 0, 0, 100, getObjectSize(object));
     });

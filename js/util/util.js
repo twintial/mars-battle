@@ -1,6 +1,6 @@
 function loadObjFromObj(mtl, obj, manager, onload) {
     const mtlLoader = new THREE.MTLLoader(manager);
-    mtlLoader.setPath("../assets/test/")
+    mtlLoader.setPath("assets/test/")
     mtlLoader.load(mtl, function (materials) {
         materials.preload();
 

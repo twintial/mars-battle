@@ -3,7 +3,7 @@ var isWF = false;
 var op = 0;
 
 function init() {
-    Physijs.scripts.worker = '../libs/other/physijs/physijs_worker.js';
+    Physijs.scripts.worker = 'libs/other/physijs/physijs_worker.js';
     Physijs.scripts.ammo = './ammo.js';
     let scenes = {
         charaScene: {
@@ -140,7 +140,7 @@ function init() {
         scenes.charaScene.camera.position.set(0, -50, 150);
         scenes.charaScene.camera.lookAt(new THREE.Vector3(0, 0, 0));
         scenes.charaScene.scene.background = new THREE.CubeTextureLoader()
-            .setPath("../img/skybox/space/")
+            .setPath("img/skybox/space/")
             .load([
                 'Outer_space_nx.png', 'Outer_space_nx.png',
                 'Outer_space_nx.png', 'Outer_space_nx.png',
@@ -191,7 +191,7 @@ function init() {
         // scenes.gameScene.scene = new Physijs.Scene()
         scenes.gameScene.scene.setGravity(new THREE.Vector3(0, -10, 0));
         scenes.gameScene.scene.background = new THREE.CubeTextureLoader()
-            .setPath("../img/skybox/mars/")
+            .setPath("img/skybox/mars/")
             .load([
                 'mars_posx.jpg', 'mars_negx.jpg',
                 'mars_posy.jpg', 'mars_negy.jpg',
@@ -348,7 +348,7 @@ function init() {
             },1000)
         };
         const loader = new THREE.ColladaLoader(manager);
-        loader.load('../assets/models/monster/monster.dae', function (result) {
+        loader.load('assets/models/monster/monster.dae', function (result) {
             result.scene.scale.copy(monster.initScale);
             result.scene.position.copy(new THREE.Vector3(-5, -3, 0));
             // setup the mixer
@@ -383,12 +383,12 @@ function init() {
         var textureLoader = new THREE.TextureLoader();
         var loader = new THREE.MD2Loader();
         let monster = new Monster2();
-        loader.load('../assets/models/ogre/ogro.md2', function (result) {
+        loader.load('assets/models/ogre/ogro.md2', function (result) {
             var mat = new THREE.MeshStandardMaterial(
                 { morphTargets: true,
                     color: 0xffffff,
                     metalness: 0,
-                    map: textureLoader.load('../assets/models/ogre/skins/skin.jpg')
+                    map: textureLoader.load('assets/models/ogre/skins/skin.jpg')
                 })
 
             var mesh = new THREE.Mesh(result, mat);
@@ -458,7 +458,7 @@ function init() {
             manager.onLoad = function () {
                 console.log("heart加载完成");
             };
-            loadObjFromObj('heart.mtl', '../assets/test/heart.obj', manager, function (heart) {
+            loadObjFromObj('heart.mtl', 'assets/test/heart.obj', manager, function (heart) {
                 heart.rotation.y = -Math.PI/2;
                 let size = getObjectSize(heart);
                 size.x = size.y;
@@ -494,9 +494,9 @@ function createGroundAndWalls(scene) {
     var textureLoader = new THREE.TextureLoader();
     var cubeMaterial = new THREE.MeshStandardMaterial({
         emissive: 0xffffff,
-        emissiveMap: textureLoader.load("../assets/textures/emissive/lava.png"),
-        normalMap: textureLoader.load("../assets/textures/emissive/lava-normals.png"),
-        metalnessMap: textureLoader.load("../assets/textures/emissive/lava-smoothness.png"),
+        emissiveMap: textureLoader.load("assets/textures/emissive/lava.png"),
+        normalMap: textureLoader.load("assets/textures/emissive/lava-normals.png"),
+        metalnessMap: textureLoader.load("assets/textures/emissive/lava-smoothness.png"),
         metalness: 1,
         roughness: 0.4,
         normalScale: new THREE.Vector2(4, 4)
