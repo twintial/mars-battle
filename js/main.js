@@ -21,6 +21,8 @@ function init() {
         fox: new Fox()
     }
     let currentChara = chara.rem;
+    $('#intro').html(chara.rem.intro);
+
     let canShoot = true;
 
     let heartPhysic = null;
@@ -317,7 +319,7 @@ function init() {
             }
             // 攻击技能
             else if (e.key === ' ' && currentChara.blue === 100) {
-                currentChara.attackSkill(scenes.gameScene.scene);
+                currentChara.uniqueSkill(scenes.gameScene.scene);
             } else if (e.key === 'g') {
                 // 恢复
                 phyObj.rotation.set(0, 0, 0);
@@ -365,7 +367,7 @@ function init() {
             var physicBox = new Physijs.BoxMesh(geometry, Physijs.createMaterial(new THREE.MeshStandardMaterial({
                 color: 'white', transparent: true, opacity: op, wireframe: isWF
             }), 1, 0), 10);
-            let initPos = getRandomPos(50, 50, 0, currentChara.position);
+            let initPos = getRandomPos(100, 100, 0, currentChara.position);
             physicBox.position.copy(initPos);
             physicBox.add(result.scene);
 
@@ -406,7 +408,7 @@ function init() {
             var physicBox = new Physijs.BoxMesh(geometry, Physijs.createMaterial(new THREE.MeshStandardMaterial({
                 color: 'white', transparent: true, opacity: op, wireframe: isWF
             }), 1, 0), 10);
-            let initPos = getRandomPos(50, 50, 3, currentChara.position);
+            let initPos = getRandomPos(100, 100, 3, currentChara.position);
             physicBox.position.copy(initPos);
             physicBox.add(mesh);
             physicBox.addEventListener('collision', function (other_object, relative_velocity, relative_rotation, contact_normal) {
@@ -472,7 +474,7 @@ function init() {
                     }
                 });
                 heartPhysic = boxPhysic.clone();
-                boxPhysic.position.copy(getRandomPos(40, 40, 0, currentChara));
+                boxPhysic.position.copy(getRandomPos(80, 80, 0, currentChara));
                 scene.add(boxPhysic)
             })
         } else {
@@ -522,11 +524,15 @@ function createGroundAndWalls(scene) {
 }
 
 function getRandomPos(w, l, h, target) {
-    return new THREE.Vector3(Math.ceil(Math.random() * w), h, Math.ceil(Math.random() * w));
+    return new THREE.Vector3(Math.ceil((Math.random()-0.5) * w), h, Math.ceil((Math.random()-0.5) * w));
 }
 
 function towardsPlayer(monsters, player) {
+    // console.log(player.target);
     if (player !== null) {
+        if (player.target) {
+            player = player.target;
+        }
         for (let monster in monsters) {
             let m = monsters[monster].mesh;
             // monsters[monster].children[0].lookAt(player.position);

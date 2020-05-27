@@ -2,6 +2,7 @@ body {
     margin: 0;
     overflow: hidden;
 }
+
 .full {
     width: 100%;
     height: 100%;
@@ -12,6 +13,7 @@ body {
     z-index: 5;
     color: white;
 }
+
 .full:after {
     display: inline-block;
     width: 0;
@@ -19,18 +21,22 @@ body {
     vertical-align: middle;
     content: ""
 }
+
 #loading {
     background: #b33630;
 }
+
 #game-over {
     display: none;
     background: rgba(0, 0, 0, .6);
 }
+
 #over {
     display: inline-block;
     text-align: center;
     vertical-align: middle
 }
+
 #restart {
     display: inline-block;
     width: 50%;
@@ -42,6 +48,7 @@ body {
     border: 2px solid #fff;
     cursor: pointer;
 }
+
 /*#scene {*/
 /*    width: 100%;*/
 /*    height: 100%;*/
@@ -61,6 +68,29 @@ body {
     font-size: 22px;
     display: none;
 }
+
+#title {
+    display: inline-block;
+}
+
+#help-button {
+    cursor: pointer;
+}
+
+#help {
+    position: absolute;
+    top: 30%;
+    right: 25%;
+    width: 300px;
+    height: auto;
+    margin: -215px 0 0 -150px;
+    padding: 20px 20px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-size: 22px;
+    display: none;
+}
+
 #start {
     font-size: 30px;
     padding: 5px 0;
@@ -70,6 +100,7 @@ body {
     border: 2px solid #fff;
     cursor: pointer;
 }
+
 #blood-bar {
     position: absolute;
     text-align: center;
@@ -78,6 +109,7 @@ body {
     width: 50%;
     display: none;
 }
+
 #monster-name {
     color: white;
     font-size: 18px;
@@ -108,6 +140,7 @@ body {
     font-weight: bold;
     display: none;
 }
+
 #score {
     font-size: 30px;
     font-weight: bold;

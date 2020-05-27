@@ -44,17 +44,21 @@
         })
     </script>
 </div>
+<div id="help">
+    <p>J键攻击，SPACE键使用技能。</p>
+    <p>击杀怪物能获得分数和蓝条，蓝条充满后可以使用技能。</p>
+    <p>血条归零或掉出场地外，游戏结束。</p>
+</div>
 <div id="chara-intro">
-    <h2>角色介绍</h2>
-    <div id="intro">
-        <p>雷姆</p>
-        <p>技能：流星锤</p>
-        <p>效果：发射出巨大流星锤，造成大量伤害</p>
-    </div>
+    <h2 id="title">角色介绍</h2>
+    <span id="help-button" class="glyphicon glyphicon-question-sign" aria-hidden="true"
+          onmouseenter="$('#help').show();"
+          onmouseleave="$('#help').hide();"></span>
+    <div id="intro"></div>
     <div id="start">Start</div>
 </div>
 <div id="blood-bar">
-    <div id="monster-name">高速移动型丧尸</div>
+    <div id="monster-name">丧尸</div>
     <div class="progress">
         <div id="bar" class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%;">
             0/0

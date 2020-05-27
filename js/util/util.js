@@ -1,3 +1,4 @@
+// 加载obj格式模型
 function loadObjFromObj(mtl, obj, manager, onload) {
     const mtlLoader = new THREE.MTLLoader(manager);
     mtlLoader.setPath("assets/test/")
