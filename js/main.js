@@ -280,13 +280,13 @@ function init() {
         // 生成怪物，需要销毁
         createMonster1(scenes.gameScene.scene, monsterList);
         createMonster2(scenes.gameScene.scene, monsterList);
-        // setInterval(function () {
-        //     if (Math.random() < 0.5) {
-        //         createMonster1(scenes.gameScene.scene, monsterList);
-        //     } else {
-        //         createMonster2(scenes.gameScene.scene, monsterList);
-        //     }
-        // }, 5000);
+        setInterval(function () {
+            if (Math.random() < 0.5) {
+                createMonster1(scenes.gameScene.scene, monsterList);
+            } else {
+                createMonster2(scenes.gameScene.scene, monsterList);
+            }
+        }, 5000);
     }
 
     function addAction(currentChara) {
