@@ -17,16 +17,10 @@ function BaseLoaderScene(providedCamera, shouldAddLights, shouldRotate, updateMe
   this.updateMesh = updateMesh
 
   // initialize basic renderer
-  // this.renderer = initRenderer({
-  //   antialias: true
-  // });
-  this.renderer = new THREE.WebGLRenderer({antialias: true});
-  this.renderer.setClearColor(new THREE.Color(0x000000));
-  this.renderer.setSize(window.innerWidth, window.innerHeight);
-  // this.renderer.shadowMap.enabled = true;
-  // this.renderer.shadowMapSoft = true;
-  // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  document.getElementById("webgl-output").appendChild(this.renderer.domElement);
+  this.renderer = initRenderer({
+    antialias: true
+  });
+  document.getElementById("scene").appendChild(this.renderer.domElement);
   //
   this.trackballControls = initTrackballControls(this.camera, this.renderer);
 
